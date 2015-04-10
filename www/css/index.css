@@ -250,3 +250,7 @@ ons-toolbar {
   vertical-align: -0px;
   opacity: 0.5;
 }
+
+    	.navigation-bar{
+  background: rgba(46, 138, 185, 0.8);
+    	}
