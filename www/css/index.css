@@ -133,6 +133,7 @@
 }
 ons-toolbar {
     	padding-top: 20px;
+  background: rgba(46, 138, 185, 0.8);
     }
     .center, .left, .right{
     	/*color: #FFFFFF;

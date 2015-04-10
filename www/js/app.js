@@ -43,17 +43,18 @@
 	$scope.urlVideo = selectedBloc.VideoResource;
     videos = document.querySelectorAll("video");
 video=videos[0];
-var isYoutube = selectedBloc.VideoResource.match(/(?:youtu|youtube)(?:\.com|\.be)\/([\w\W]+)/i);
+/*var isYoutube = selectedBloc.VideoResource.match(/(?:youtu|youtube)(?:\.com|\.be)\/([\w\W]+)/i);
         if (isYoutube) {
             var id = isYoutube[1].match(/watch\?v=|[\w\W]+/gi);
             id = (id.length > 1) ? id.splice(1) : id;
             id = id.toString();
             var mp4url = "http://www.youtubeinmp4.com/redirect.php?video=";
             //$scope.ons.notification.alert({message: ""+ mp4url + id,title: "intellibanks"});
-            video.src = mp4url + id;
-        }
+            //video.src = mp4url + id;
+        }*/
+       video.src = selectedBloc.VideoResource;
 	$scope.video=function(item){
-    	$scope.ons.notification.confirm({messageHTML: '<ons-row><ons-col width="95px"><img src="../img/Youtube.png" class="thumbnail"></ons-col><ons-col><div class="name"> '+item.Title+' </div><div class="location"><i class="fa fa-map-marker"></i> Paris, France</div><div class="desc"> '+item.VideoResource+'</div></ons-col> <ons-col width="40px"></ons-col> </ons-row>',title: "¿Compartir este video?"});
+    	$scope.ons.notification.confirm({messageHTML: '<ons-row><ons-col width="95px"><img src="../img/icon.png" class="thumbnail"></ons-col><ons-col><div class="name"> '+item.Title+' </div><div class="location"><i class="fa fa-map-marker"></i> Paris, France</div><div class="desc"> '+item.VideoResource+'</div></ons-col> <ons-col width="40px"></ons-col> </ons-row>',title: "¿Compartir este video?"});
     	//$scope.ons.navigator.pushPage('video.html', {title : "1"});
     	}; 
     $scope.audio=function(item){
