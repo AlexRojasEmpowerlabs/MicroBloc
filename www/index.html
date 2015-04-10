@@ -58,7 +58,7 @@ under the License.
 
 				<ons-list class="menu-list">
 					<ons-list-item class="menu-item" ng-click="menu.setMainPage('inicio.html', {closeMenu: true})">
-						<ons-icon icon="fa-plus"></ons-icon>
+						<ons-icon icon="ion-home"></ons-icon>
 						Inicio
 					</ons-list-item>
 
@@ -97,9 +97,35 @@ under the License.
 							Micro Blocs
 						</div>
 					</ons-toolbar>
-					<p>
-						
-					</p>
+					<ons-carousel swipeable overscrollable auto-scroll fullscreen var="carousel">
+					
+					<ons-carousel-item style="background-color: rgba(46, 138, 185, 1);">
+						<h2 style="color: #FFFFFF; text-align: center;">¿Qué es MBlocs?</h2>
+					</ons-carousel-item>
+					<ons-carousel-item style="background-color: gray; color:#FFFFFF">
+						<h2 style="color: #FFFFFF; text-align: center;">Importancia</h2>
+						<ol>
+<li> En la era de la sobrecarga de la información, es vital volver a la esencia de la comunicación y el aprendizaje.
+</li> <li> Los mBlocs son una propuesta para regresar a la ecología de los sentidos y el pensamiento creativo.
+</li> <li> Los mBlocs explican de manera concisa, esencial y completa un tema.
+</li> <li> Los mBlocs requieren una profunda reflexión para verdaderamente asimilar y entender.
+</li></ol> 
+					</ons-carousel-item>
+					<ons-carousel-item style="background-color: #373B44;">
+						<h2 style="color: #FFFFFF; text-align: center;"></h2>
+					</ons-carousel-item>
+					<ons-carousel-item style="background-color: #085078;">
+						<h2 style="color: #FFFFFF; text-align: center;"></h2>
+					</ons-carousel-item>
+					<ons-carousel-item style="background-color: orange;">
+						<h2 style="color: #FFFFFF; text-align: center;"></h2>
+					</ons-carousel-item>
+					<ons-carousel-cover>
+						<div style="text-align: center; position: absolute; left: 0px; width: 100%; bottom: 10px; color: #72C6D8;">
+							Desliza a la derecha o izquierda
+						</div>
+					</ons-carousel-cover>
+				</ons-carousel>
 
 				</ons-page>
 		</ons-template>
@@ -109,7 +135,7 @@ under the License.
 					<ons-toolbar modifier="transparent" class="trans">
 						<div class="right">
 							<ons-toolbar-button>
-								<ons-icon icon="ion-android-information" style="color: white" ng-click="informacion()"></ons-icon>
+								<ons-icon icon="ion-refresh" style="color: white" ng-click="menu.setMainPage('inicio.html', {closeMenu: true})"></ons-icon>
 							</ons-toolbar-button>
 						</div>
 						<div class="center">
@@ -196,7 +222,7 @@ under the License.
 						<ons-list-item modifier="chevron" class="list-item-container" ng-repeat="item in items" ng-click="detalles(item)">
 							<ons-row>
 								<ons-col width="95px">
-									<img src="img/logo.png" class="thumbnail">
+									<img src="{{item.PresentationResource}}" class="thumbnail">
 								</ons-col>
 								<ons-col>
 									<div class="name">
@@ -230,7 +256,7 @@ under the License.
 					</div>
 					<div class="right">
 						<ons-toolbar-button>
-							<ons-icon icon="ion-android-share" style="margin-right: 5px;"></ons-icon>
+							<ons-icon icon="ion-android-share" style="margin-right: 5px;" ng-click="shareWeb(item)"></ons-icon>
 						</ons-toolbar-button>
 					</div>
 				</ons-toolbar>
@@ -263,13 +289,13 @@ under the License.
 						</ons-list>
 					</ons-list-item>
 					<ons-list-item class="item" modifier="chevron" ng-click="video(item)">
-						Video
+						<i class="ion-social-youtube"></i> Compartir Video
 					</ons-list-item>
 					<ons-list-item class="item" modifier="chevron" ng-click="audio(item)">
-						Audio
+						<i class="ion-social-buffer"></i> Escuchar Audio
 					</ons-list-item>
 					<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">
-						Presentación
+						Ver Presentación
 					</ons-list-item>
 				</ons-list>
 
