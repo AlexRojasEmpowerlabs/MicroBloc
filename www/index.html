@@ -37,12 +37,12 @@ under the License.
 		<script src="cordova.js"></script>
 		<script src="js/index.js"></script>
 		<script>
-		var fondo="uno";
+			var fondo = "uno";
 			function myFunction() {
-    setInterval(function(){ 
-    	 //alert("Hello");
-}, 3000);
-}
+				setInterval(function() {
+					//alert("Hello");
+				}, 3000);
+			}
 		</script>
 		<script src="js/app.js"></script>
 
@@ -59,7 +59,15 @@ under the License.
 				<ons-list class="menu-list">
 					<ons-list-item class="menu-item" ng-click="menu.setMainPage('inicio.html', {closeMenu: true})">
 						<ons-icon icon="ion-home"></ons-icon>
-						Inicio
+						Noticias
+					</ons-list-item>
+					<ons-list-item class="menu-item" ng-click="menu.setMainPage('inicio.html', {closeMenu: true})">
+						<ons-icon icon="fa-graduation-cap"></ons-icon>
+						Cursos
+					</ons-list-item>
+					<ons-list-item class="menu-item" ng-click="menu.setMainPage('inicio.html', {closeMenu: true})">
+						<ons-icon icon="fa-rss"></ons-icon>
+						Suscripciones
 					</ons-list-item>
 
 				</ons-list>
@@ -67,6 +75,11 @@ under the License.
 				<br>
 
 				<ons-list class="bottom-menu-list">
+
+					<ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('inicio.html', {closeMenu: true})">
+						<ons-icon icon="fa-users"></ons-icon>
+						Mi Intellibanks
+					</ons-list-item>
 					<!--<ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
 					Settings
 					<div class="notification menu-notification">
@@ -86,30 +99,38 @@ under the License.
 		</ons-template>
 
 		<ons-template id="info.html">
-				<ons-page ng-controller="InicioController">
-					<ons-toolbar>
+			<ons-page ng-controller="InicioController">
+				<ons-toolbar>
 					<div class="left">
 						<ons-back-button>
 							Inicio
 						</ons-back-button>
 					</div>
-						<div class="center">
-							Micro Blocs
-						</div>
-					</ons-toolbar>
-					<ons-carousel swipeable overscrollable auto-scroll fullscreen var="carousel">
-					
+					<div class="center">
+						Micro Blocs
+					</div>
+				</ons-toolbar>
+				<ons-carousel swipeable overscrollable auto-scroll fullscreen var="carousel">
+
 					<ons-carousel-item style="background-color: rgba(46, 138, 185, 1);">
 						<h2 style="color: #FFFFFF; text-align: center;">¿Qué es MBlocs?</h2>
 					</ons-carousel-item>
 					<ons-carousel-item style="background-color: gray; color:#FFFFFF">
 						<h2 style="color: #FFFFFF; text-align: center;">Importancia</h2>
 						<ol>
-<li> En la era de la sobrecarga de la información, es vital volver a la esencia de la comunicación y el aprendizaje.
-</li> <li> Los mBlocs son una propuesta para regresar a la ecología de los sentidos y el pensamiento creativo.
-</li> <li> Los mBlocs explican de manera concisa, esencial y completa un tema.
-</li> <li> Los mBlocs requieren una profunda reflexión para verdaderamente asimilar y entender.
-</li></ol> 
+							<li>
+								En la era de la sobrecarga de la información, es vital volver a la esencia de la comunicación y el aprendizaje.
+							</li>
+							<li>
+								Los mBlocs son una propuesta para regresar a la ecología de los sentidos y el pensamiento creativo.
+							</li>
+							<li>
+								Los mBlocs explican de manera concisa, esencial y completa un tema.
+							</li>
+							<li>
+								Los mBlocs requieren una profunda reflexión para verdaderamente asimilar y entender.
+							</li>
+						</ol>
 					</ons-carousel-item>
 					<ons-carousel-item style="background-color: #373B44;">
 						<h2 style="color: #FFFFFF; text-align: center;"></h2>
@@ -127,7 +148,7 @@ under the License.
 					</ons-carousel-cover>
 				</ons-carousel>
 
-				</ons-page>
+			</ons-page>
 		</ons-template>
 		<ons-template id="inicio.html">
 			<ons-navigator animation="lift" var="app2.navi">
@@ -166,47 +187,47 @@ under the License.
 					</div>
 
 					<!--<ons-list style="border-top: none">
-						<ons-list-item style="line-height: 1; padding: 0;">
-							<ons-row class="action">
+					<ons-list-item style="line-height: 1; padding: 0;">
+					<ons-row class="action">
 
-								<ons-col class="action-col">
-									<div class="action-icon">
-										<ons-icon icon="ion-ios7-star-half"></ons-icon>
-									</div>
-									<div class="action-label">
-										Rate
-									</div>
-								</ons-col>
+					<ons-col class="action-col">
+					<div class="action-icon">
+					<ons-icon icon="ion-ios7-star-half"></ons-icon>
+					</div>
+					<div class="action-label">
+					Rate
+					</div>
+					</ons-col>
 
-								<ons-col class="action-col">
-									<div class="action-icon">
-										<ons-icon icon="ion-bookmark"></ons-icon>
-									</div>
-									<div class="action-label">
-										Favorite
-									</div>
-								</ons-col>
+					<ons-col class="action-col">
+					<div class="action-icon">
+					<ons-icon icon="ion-bookmark"></ons-icon>
+					</div>
+					<div class="action-label">
+					Favorite
+					</div>
+					</ons-col>
 
-								<ons-col class="action-col">
-									<div class="action-icon">
-										<ons-icon icon="ion-share"></ons-icon>
-									</div>
-									<div class="action-label">
-										Share
-									</div>
-								</ons-col>
+					<ons-col class="action-col">
+					<div class="action-icon">
+					<ons-icon icon="ion-share"></ons-icon>
+					</div>
+					<div class="action-label">
+					Share
+					</div>
+					</ons-col>
 
-								<ons-col class="action-col">
-									<div class="action-icon">
-										<ons-icon icon="ion-compose"></ons-icon>
-									</div>
-									<div class="action-label">
-										Check In
-									</div>
-								</ons-col>
+					<ons-col class="action-col">
+					<div class="action-icon">
+					<ons-icon icon="ion-compose"></ons-icon>
+					</div>
+					<div class="action-label">
+					Check In
+					</div>
+					</ons-col>
 
-							</ons-row>
-						</ons-list-item>
+					</ons-row>
+					</ons-list-item>
 					</ons-list>
 
 					<ons-list class="escroleado">
@@ -268,7 +289,11 @@ under the License.
 						</video>
 						<header>
 							<span class="item-title">{{item.Title}}</span>
+							<br>
 						</header>
+						<p>
+							
+						</p>
 					</ons.list-item>
 				</ons-list>
 				<ons-list modifier="chevron" style="max-height: 50%; overflow: scroll;">
@@ -276,6 +301,10 @@ under the License.
 
 						<ons-list style="margin-top: 10px">
 							<ons-list-item class="item">
+								<header>
+									<span class="item-title">14/04/2015</span>
+									<br>
+								</header>
 								<p class="item-desc">
 									{{item.Summary}}
 								</p>
@@ -286,16 +315,39 @@ under the License.
 									<strong>Categoria:: </strong>{{item.Category}}
 								</p>
 							</ons-list-item>
+							<ons-list-item class="item">
+								<p>
+									<div class="rating">
+										<div class="rating-num">
+											<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+											<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+											<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+											<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+											<ons-icon icon="fa-star-half" fixed-width="false"></ons-icon>
+											4.5
+										</div>
+									</div>
+								</p>
+							</ons-list-item>
 						</ons-list>
 					</ons-list-item>
-					<ons-list-item class="item" modifier="chevron" ng-click="video(item)">
-						<i class="ion-social-youtube"></i> Compartir Video
+					<!--<ons-list-item class="item" modifier="chevron" ng-click="video(item)">
+					<i class="ion-social-youtube"></i> Compartir Video
 					</ons-list-item>
 					<ons-list-item class="item" modifier="chevron" ng-click="audio(item)">
-						<i class="ion-social-buffer"></i> Escuchar Audio
+					<i class="ion-social-buffer"></i> Escuchar Audio
 					</ons-list-item>
 					<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">
-						Ver Presentación
+					Ver Presentación
+					</ons-list-item>-->
+					<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">
+						<i class="fa fa-comments"></i> Comentarios
+					</ons-list-item>
+					<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">
+						<i class="fa fa-signal"></i> Encuesta
+					</ons-list-item>
+					<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">
+						<i class="fa-signal"></i> Etiquetas
 					</ons-list-item>
 				</ons-list>
 
