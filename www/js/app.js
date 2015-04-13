@@ -68,12 +68,9 @@ video=videos[0];
     	$scope.ons.notification.alert({messageHTML:'<div style="width: 100%; height: 360px;background-color:White; overflow: hidden;"><iframe src="//www.slideshare.net/slideshow/embed_code/46732684?rel=0" style="width:80%" height="407" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>',title:'Presentación'});
     	};
     $scope.shareWeb=function(item){
-    	$http.get('https://twitter.com/intent/tweet?text=testing').
-    	success(function(data, status, headers, config){
-    		$scope.ons.notification.alert({message:data});
-    	});
-    	//$scope.ons.notification.confirm({messageHTML: '<ons-row><ons-col width="95px"><img src="'+item.Thumbnail+'" class="thumbnail"></ons-col><ons-col><div class="name"> '+item.Title+' </div><div class="location"><i class="fa fa-map-marker"></i> Paris, France</div><div class="desc"> '+item.ExternalLink+'</div></ons-col> <ons-col width="40px"></ons-col> </ons-row>',
-    	//title: "¿Compartir Bloc en la web?"});
+    	
+    	$scope.ons.notification.confirm({messageHTML: '<ons-row><ons-col width="95px"><img src="'+item.Thumbnail+'" class="thumbnail"></ons-col><ons-col><div class="name"> '+item.Title+' </div><div class="location"><i class="fa fa-map-marker"></i> Paris, France</div><div class="desc"> '+item.ExternalLink+'</div></ons-col> <ons-col width="40px"></ons-col> </ons-row>',
+    	title: "¿Compartir Bloc en la web?"});
     };
   });
   
