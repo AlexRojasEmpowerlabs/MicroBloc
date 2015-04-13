@@ -353,7 +353,7 @@ under the License.
 
 			</ons-page>
 		</ons-template>
-		<ons-template id="video.html">
+		<ons-template id="comentario.html">
 			<ons-page ng-controller="VideoController">
 				<ons-toolbar>
 					<div class="left">
@@ -362,17 +362,12 @@ under the License.
 						</ons-back-button>
 					</div>
 					<div class="center">
-						Micro Video
+						Comentarios
 					</div>
 				</ons-toolbar>
 				<ons-list style="margin-top: 10px">
 					<ons.list-item class="item" style=" text-align: center">
-						<video controls="true">
-							<source ng-src="{{url}}" type="video/mp4"></source>
-						</video>
-						<p>
-							{{url}}
-						</p>
+						
 					</ons.list-item>
 				</ons-list>
 			</ons-page>
