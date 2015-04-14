@@ -38,7 +38,8 @@
       return data;
   });
   
-  module.controller('MicroController', function($scope,$http){
+  module.controller('MicroController', function($scope,$commnentsArray,$http){
+  	$scope.elementos=$commnentsArray.items;
 	$scope.item= selectedBloc;
 	$scope.urlVideo = selectedBloc.VideoResource;
     videos = document.querySelectorAll("video");
@@ -65,7 +66,8 @@ video=videos[0];
     	//$scope.ons.navigator.pushPage('page4.html', {title : "1"});
     	};
     $scope.presentacion=function(){
-    	$scope.ons.notification.alert({messageHTML:'<div style="width: 100%; height: 360px;background-color:White; overflow: hidden;"><iframe src="//www.slideshare.net/slideshow/embed_code/46732684?rel=0" style="width:80%" height="407" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>',title:'Presentación'});
+    $scope.ons.notification.alert({messageHTML:'<div class="comments-container"></div<ul id="comments-list" class="comments-list"><li><div class="comment-main-level"><div class="comment-avatar"><img src="images/avatar_1.png" alt=""></div><div class="comment-box"><div class="comment-head"><h6 class="comment-name">Leonel Daniel</a></h6><i>hace 20 minutos</i></div><div class="comment-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?</div></div></li</ul></div>	'});
+    	//$scope.ons.notification.alert({messageHTML:'<div style="width: 100%; height: 360px;background-color:White; overflow: hidden;"><iframe src="//www.slideshare.net/slideshow/embed_code/46732684?rel=0" style="width:80%" height="407" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>',title:'Presentación'});
     	};
     $scope.shareWeb=function(item){
     	
@@ -74,9 +76,16 @@ video=videos[0];
     };
   });
   
-  module.controller('AudioController', function($scope) {
-    $scope.url = selectedBloc.AudioResource;
+  module.factory('$commnentsArray',function(){
+  	var dataCom = {};
+      
+      dataCom.items = [{"nombre":"Alex Rojas","comentario":"hola a todos, buen contenido, muy útil para mi estadía profesional","fecha":"14-04-2015","thum":"http://www.bigdatabrasil.net/wp-content/uploads/2014/05/user.jpg"},
+      {"nombre":"Leonel Martinez","comentario":"Excelente calidad de video","fecha":"14-04-2015","thum":"http://www.bigdatabrasil.net/wp-content/uploads/2014/05/user.jpg"}];
+      
+      return dataCom;
   });
+  
+  
   module.controller('VideoController', function($scope) {
     //$scope.ons.notification.alert({message: ""+misDatos.url,title: "intellibanks"});
     $scope.urlVideo = selectedBloc.VideoResource;

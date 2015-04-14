@@ -57,7 +57,7 @@ under the License.
 				<ons-toolbar modifier="transparent"></ons-toolbar>
 
 				<ons-list class="menu-list">
-					<ons-list-item class="menu-item" ng-click="menu.setMainPage('inicio.html', {closeMenu: true})">
+					<ons-list-item class="menu-item" ng-click="menu.setMainPage('news.html', {closeMenu: true})">
 						<ons-icon icon="ion-home"></ons-icon>
 						Noticias
 					</ons-list-item>
@@ -175,7 +175,7 @@ under the License.
 							mBlocs
 						</div>
 						<div class="card-desc">
-							Powered by Empowerlabs
+							Empowered by Empowerlabs
 						</div>
 
 					</div>
@@ -284,7 +284,7 @@ under the License.
 
 				<ons-list modifier="chevron" style="margin-top: 10px">
 					<ons.list-item class="item" style=" text-align: center">
-						<video controls="true">
+						<video controls="true" style="max-width: 95%;">
 							<source ng-src="{{urlVideo}}" type="video/mp4"></source>
 						</video>
 						<header>
@@ -292,7 +292,7 @@ under the License.
 							<br>
 						</header>
 						<p>
-							
+
 						</p>
 					</ons.list-item>
 				</ons-list>
@@ -340,8 +340,27 @@ under the License.
 					<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">
 					Ver Presentación
 					</ons-list-item>-->
-					<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">
-						<i class="fa fa-comments"></i> Comentarios
+					<ons-list-item class="item" modifier="chevron">
+						<ons-list>
+							<ons-list-item class="item" ng-repeat="elem in elementos">
+
+								<ons-row>
+									<ons-col width="60px">
+										<div class="item-thum"><img src="{{elem.thum}}" style="height:55px; width: 55px;" />
+										</div>
+									</ons-col>
+									<ons-col>
+										<header>
+											<span class="item-title">{{elem.nombre}}</span>
+											<span class="item-label">{{elem.fecha}}</span>
+										</header>
+										<p class="item-desc">
+											{{elem.comentario}}
+										</p>
+									</ons-col>
+								</ons-row>
+							</ons-list-item>
+						</ons-list>
 					</ons-list-item>
 					<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">
 						<i class="fa fa-signal"></i> Encuesta
@@ -353,7 +372,7 @@ under the License.
 
 			</ons-page>
 		</ons-template>
-		<ons-template id="comentario.html">
+		<ons-template id="video.html">
 			<ons-page ng-controller="VideoController">
 				<ons-toolbar>
 					<div class="left">
@@ -367,33 +386,325 @@ under the License.
 				</ons-toolbar>
 				<ons-list style="margin-top: 10px">
 					<ons.list-item class="item" style=" text-align: center">
-						
+
 					</ons.list-item>
 				</ons-list>
 			</ons-page>
 		</ons-template>
-		<ons-template id="audio.html">
-			<ons-page ng-controller="AudioController">
+		<ons-template id="comentario.html">
+			<ons-page ng-controller="CommentController">
 				<ons-toolbar>
+
 					<div class="left">
-						<ons-back-button>
-							Regresar
-						</ons-back-button>
+						<ons-toolbar-button>
+							<ons-icon icon="ion-android-share" style="margin-right: 5px;" ng-click="menu.setMainPage('micro.html', {closeMenu: true}"></ons-icon>
+						</ons-toolbar-button>
 					</div>
 					<div class="center">
-						Micro Audio
+						Comentarios
 					</div>
 				</ons-toolbar>
-				<ons-list style="margin-top: 10px" >
-					<ons.list-item class="item" style=" text-align: center">
-						<!--<audio style="height: 40px;" controls>
-						<source src="{{url}}" type="audio/mpeg">
-						Your browser does not support the audio element.
-						</audio>
-						{{url}}-->
-					</ons.list-item>
-				</ons-list>
 			</ons-page>
+		</ons-template>
+
+		<ons-template id="news.html">
+			<ons-navigator title="Navigator" var="myNavigator">
+				 <ons-page>    
+	    <ons-toolbar>
+        	<div class="center">Noticias</div>
+        		
+						<div class="left">
+							<ons-toolbar-button ng-click="menu.toggle()">
+								<ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+      	</ons-toolbar>
+      
+    	<div class="card">
+        </div>
+        
+      	<div class="rating">
+          	<div class="rating-num">
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star-half" fixed-width="false"></ons-icon>
+        	</div>
+        </div>
+        
+        <ons-list style="border-top: none">
+        	<ons-list-item style="line-height: 1; padding: 0;">
+          		<ons-row class="action">
+					<ons-col class="action-col">
+              			<div class="action-icon">
+                    		<ons-icon icon="ion-bookmark"></ons-icon>
+                     	</div>
+              			<div class="action-label">Favorite</div>
+            		</ons-col>
+
+            		<ons-col class="action-col">
+              			<div class="action-icon">
+                    		<ons-icon icon="ion-share"></ons-icon>
+                        </div>
+              			<div class="action-label">Share</div>
+            		</ons-col>
+
+            		<ons-col class="action-col">
+              			<div class="action-icon">
+                        	<ons-icon icon="ion-compose"></ons-icon>
+                        </div>
+              			<div class="action-label">Check In</div>
+            		</ons-col>
+          		</ons-row>
+        	</ons-list-item>
+     	</ons-list>
+
+        <ons-list>
+        
+          	<ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('page2.html', { animation : 'slide' } )" class="list-item-container">
+          		<div class="list-item-left">
+            		<img src="img/news3.jpg" class="avator">
+          		</div>
+          		<div class="list-item-right">
+            		<div class="list-item-content">
+              			<div class="name">Descubren método para la diagnosis del cáncer con teléfonos inteligentes</div>
+              			<span class="desc">Los autores proponen un método basado en la difracción que permite la diagnosis celular y molecular, hasta ahora de difícil implantación, en teléfonos inteligentes</span>
+           			</div>
+          		</div>
+        	</ons-list-item>
+            
+            <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('page3.html', { animation : 'slide' } )" class="list-item-container">
+          		<div class="list-item-left">
+            		<img src="img/news4.jpg" class="avator">
+          		</div>
+          		<div class="list-item-right">
+            		<div class="list-item-content">
+              			<div class="name">Twitter permite subir videos en cámara lenta</div>
+              			<span class="desc">La opción que permite postear este tipo de videos está disponible solo para personas con sistema operativo iOS (Apple)</span>
+           			</div>
+          		</div>
+        	</ons-list-item>
+            
+            <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('page4.html', { animation : 'slide' } )" class="list-item-container">
+          		<div class="list-item-left">
+            		<img src="img/news5.jpg" class="avator">
+          		</div>
+          		<div class="list-item-right">
+            		<div class="list-item-content">
+              			<div class="name">Científicos inventan batería que se recarga en un minuto</div>
+              			<span class="desc">Mientras que las baterías de iones de litio duran alrededor de 1.000 ciclos, la nueva batería de aluminio pudo continuar después de más de 7.500 ciclos sin perder capacidad</span>
+           			</div>
+          		</div>
+        	</ons-list-item>            
+      	</ons-list>
+    </ons-page>  
+</ons-navigator>
+
+<ons-template id="page2.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left" style="line-height: 44px">
+          <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Noticia</div>
+      </ons-toolbar>
+
+      <div class="card1">
+      </div>
+        
+      	<div class="rating">
+          	<div class="rating-num">
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star-half" fixed-width="false"></ons-icon>
+        	</div>
+        </div>
+        
+        <ons-list style="border-top: none">
+        	<ons-list-item style="line-height: 1; padding: 0;">
+          		<ons-row class="action">
+					<ons-col class="action-col">
+              			<div class="action-icon">
+                    		<ons-icon icon="ion-bookmark"></ons-icon>
+                     	</div>
+              			<div class="action-label">Favorite</div>
+            		</ons-col>
+
+            		<ons-col class="action-col">
+              			<div class="action-icon">
+                    		<ons-icon icon="ion-share"></ons-icon>
+                        </div>
+              			<div class="action-label">Share</div>
+            		</ons-col>
+
+            		<ons-col class="action-col">
+              			<div class="action-icon">
+                        	<ons-icon icon="ion-compose"></ons-icon>
+                        </div>
+              			<div class="action-label">Check In</div>
+            		</ons-col>
+          		</ons-row>
+        	</ons-list-item>
+     	</ons-list>
+        
+        <div class="contenedor">
+          <div class="titulo-new">Descubren método para la diagnosis del cáncer con teléfonos inteligentes</div>
+          <div class="contenido">Los autores proponen un método basado en la difracción que permite la diagnosis celular y molecular, hasta ahora de difícil implantación, en teléfonos inteligentes</div>
+          <p align="justify">Los teléfonos inteligentes podrían convertirse en una herramienta asequible para diagnosticar ciertos tipos de cáncer, según un estudio publicado hoy en la revista científica Proceedings of the National Academy of Sciences (PNAS). 
+</br></br>
+Los autores proponen un método basado en la difracción que permite la diagnosis celular y molecular, hasta ahora de difícil implantación, en teléfonos inteligentes. 
+</br></br>
+El sistema de difracción digital (D3) usa micropartículas para generar patrones de difracción únicos que pueden ser aprendidos por un teléfono inteligente y procesados por un servidor remoto ofreciendo un diagnóstico en unos 45 minutos. 
+</br></br>
+En el estudio, los investigadores aplicaron la plataforma D3 para examinar células precancerosas y cancerosas y detectar el virus del papiloma humano. 
+</br></br>
+"Este método podría aplicarse con buenos resultados en entornos donde el acceso médico es limitado", defienden los autores del estudio. 
+</br></br>
+Según los investigadores, el ensayo, que actualmente cuesta 1,80 dólares por diagnóstico, demuestra la viabilidad de un enfoque de diagnóstico basado en teléfonos inteligentes y en entornos con recursos limitados.</p>
+        </div>
+        
+    </ons-page>
+  </ons-template>
+
+
+<ons-template id="page3.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left" style="line-height: 44px">
+          <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Noticia</div>
+      </ons-toolbar>
+
+      <div class="card2">
+      </div>
+        
+      	<div class="rating">
+          	<div class="rating-num">
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star-half" fixed-width="false"></ons-icon>
+        	</div>
+        </div>
+        
+        <ons-list style="border-top: none">
+        	<ons-list-item style="line-height: 1; padding: 0;">
+          		<ons-row class="action">
+					<ons-col class="action-col">
+              			<div class="action-icon">
+                    		<ons-icon icon="ion-bookmark"></ons-icon>
+                     	</div>
+              			<div class="action-label">Favorite</div>
+            		</ons-col>
+
+            		<ons-col class="action-col">
+              			<div class="action-icon">
+                    		<ons-icon icon="ion-share"></ons-icon>
+                        </div>
+              			<div class="action-label">Share</div>
+            		</ons-col>
+
+            		<ons-col class="action-col">
+              			<div class="action-icon">
+                        	<ons-icon icon="ion-compose"></ons-icon>
+                        </div>
+              			<div class="action-label">Check In</div>
+            		</ons-col>
+          		</ons-row>
+        	</ons-list-item>
+     	</ons-list>
+        
+        <div class="contenedor">
+          <div class="titulo-new">Twitter permite subir videos en cámara lenta</div>
+          <div class="contenido">
+La opción que permite postear este tipo de videos está disponible solo para personas con sistema operativo iOS (Apple)</div>
+          <p align="justify">Twitter anunció que los usuarios de iPhone ya pueden subir y compartir sus vídeos en cámara lenta, lo que en la práctica supone que los usuarios podrán subir este tipo de vídeos como un archivo más, sin necesidad de tener que realizar ningún ajuste para que luego, puedan disfrutar simplemente del efecto de cámara lenta. 
+</br></br>
+Es bueno señalar que fue a partir del modelo iPhone 5s cuando se añadió esta capacidad de grabación, permitiendo la grabación de vídeos a 120 fps (cuadros por segundos) , aunque en modelos más recientes de iPhone es posible la grabación de vídeos a cámara lenta a 240 fps.
+</br></br>
+La empresa confirmó la noticia a través de un tuit, y que es compatible el material en 60, 120 y 240 cuadros por segundo (fps) en los mensajes.</p>
+        </div>
+        
+    </ons-page>
+  </ons-template>
+
+<ons-template id="page4.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left" style="line-height: 44px">
+          <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Noticia</div>
+      </ons-toolbar>
+
+      <div class="card3">
+      </div>
+        
+      	<div class="rating">
+          	<div class="rating-num">
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+            	<ons-icon icon="fa-star-half" fixed-width="false"></ons-icon>
+        	</div>
+        </div>
+        
+        <ons-list style="border-top: none">
+        	<ons-list-item style="line-height: 1; padding: 0;">
+          		<ons-row class="action">
+					<ons-col class="action-col">
+              			<div class="action-icon">
+                    		<ons-icon icon="ion-bookmark"></ons-icon>
+                     	</div>
+              			<div class="action-label">Favorite</div>
+            		</ons-col>
+
+            		<ons-col class="action-col">
+              			<div class="action-icon">
+                    		<ons-icon icon="ion-share"></ons-icon>
+                        </div>
+              			<div class="action-label">Share</div>
+            		</ons-col>
+
+            		<ons-col class="action-col">
+              			<div class="action-icon">
+                        	<ons-icon icon="ion-compose"></ons-icon>
+                        </div>
+              			<div class="action-label">Check In</div>
+            		</ons-col>
+          		</ons-row>
+        	</ons-list-item>
+     	</ons-list>
+        
+        <div class="contenedor">
+          <div class="titulo-new">Científicos inventan batería que se recarga en un minuto</div>
+          <div class="contenido">
+Mientras que las baterías de iones de litio duran alrededor de 1.000 ciclos, la nueva batería de aluminio pudo continuar después de más de 7.500 ciclos sin perder capacidad</div>
+          <p align="justify">Científicos de la Universidad de Stanford (EEUU) afirman haber inventado una batería para teléfonos inteligentes barata, duradera, flexible y fabricada en aluminio que se recarga en tan sólo un minuto.
+</br></br>
+Los investigadores, que han detallado su descubrimiento en la revista 'Nature', han detallado que la nueva batería de iones de aluminio tiene potencia para reemplazar las baterías de iones de litio que utilizan millones de ordenadores portátiles y teléfonos móviles.
+</br></br>
+Además de la rápida recarga, la nueva batería es más segura que las actuales, que ocasionalmente se recalientan y arden, han añadido sus promotores.
+</br></br>
+"Las baterías de litio pueden constituir peligro de incendio. La nuestra, no", ha subrayado Hongjie Dai, el profesor de química que ha dirigido el equipo de la universidad californiana.
+</br></br>
+Los investigadores han intentado durante mucho tiempo desarrollar una batería hecha de aluminio, un metal ligero, de relativamente bajo coste y alta capacidad de carga.
+</br></br>
+El equipo de Dai descubrió accidentalmente que el grafito es un buen aliado del aluminio, ha confirmado el centro a través de un comunicado.
+</br></br>
+Mientras que las baterías de iones de litio duran alrededor de 1.000 ciclos, el prototipo de la nueva batería de aluminio pudo continuar después de más de 7.500 ciclos sin perder capacidad. Además, se puede doblar o plegar.</p>
+        </div>
+        
+    </ons-page>
+  </ons-template>
+		</ons-template>
+		<ons-template id="myIntellibanks">
 		</ons-template>
 
 	</body>
