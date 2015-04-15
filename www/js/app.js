@@ -66,7 +66,7 @@ video=videos[0];
     	//$scope.ons.navigator.pushPage('page4.html', {title : "1"});
     	};
     $scope.presentacion=function(){
-    $scope.ons.notification.alert({messageHTML:'<div class="comments-container"></div<ul id="comments-list" class="comments-list"><li><div class="comment-main-level"><div class="comment-avatar"><img src="images/avatar_1.png" alt=""></div><div class="comment-box"><div class="comment-head"><h6 class="comment-name">Leonel Daniel</a></h6><i>hace 20 minutos</i></div><div class="comment-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?</div></div></li</ul></div>	'});
+    $scope.ons.notification.alert({messageHTML:'<img src="https://atochaemprende.wikispaces.com/file/view/grafico_2-NB_(1).png/189220951/grafico_2-NB_(1).png" style="width: 250px; height: 175px"/>', title: "Encuesta"});
     	//$scope.ons.notification.alert({messageHTML:'<div style="width: 100%; height: 360px;background-color:White; overflow: hidden;"><iframe src="//www.slideshare.net/slideshow/embed_code/46732684?rel=0" style="width:80%" height="407" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>',title:'Presentación'});
     	};
     $scope.shareWeb=function(item){

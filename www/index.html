@@ -65,7 +65,7 @@ under the License.
 						<ons-icon icon="fa-graduation-cap"></ons-icon>
 						Cursos
 					</ons-list-item>
-					<ons-list-item class="menu-item" ng-click="menu.setMainPage('inicio.html', {closeMenu: true})">
+					<ons-list-item class="menu-item" ng-click="menu.setMainPage('myIntellibanks.html', {closeMenu: true})">
 						<ons-icon icon="fa-rss"></ons-icon>
 						Suscripciones
 					</ons-list-item>
@@ -704,7 +704,141 @@ Mientras que las baterías de iones de litio duran alrededor de 1.000 ciclos, el
     </ons-page>
   </ons-template>
 		</ons-template>
-		<ons-template id="myIntellibanks">
+		<ons-template id="myIntellibanks.html">
+		<ons-navigator title="Navigator" var="myNavigator">    
+    <ons-page>    
+	    <ons-toolbar>
+        	<div class="center">Suscripciones</div>
+        		
+						<div class="left">
+							<ons-toolbar-button ng-click="menu.toggle()">
+								<ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+      	</ons-toolbar>
+        
+        <ons-list>
+        
+          	<ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('page2a.html', { animation : 'slide' } )" class="list-item-container">
+          		<div class="list-item-left">
+            		<img src="img/Martin.jpg" class="avator">
+          		</div>
+          		<div class="list-item-right">
+            		<div class="list-item-content">
+              			<div class="name">José Martín Morales Limón</div>
+           			</div>
+          		</div>
+        	</ons-list-item>
+            
+            <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('page3a.html', { animation : 'slide' } )" class="list-item-container">
+          		<div class="list-item-left">
+            		<img src="img/Alejandro.jpg" class="avator">
+          		</div>
+          		<div class="list-item-right">
+            		<div class="list-item-content">
+              			<div class="name">Jose Alejandro Rojas Lopez</div>
+           			</div>
+          		</div>
+        	</ons-list-item>
+            
+            <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('page4a.html', { animation : 'slide' } )" class="list-item-container">
+          		<div class="list-item-left">
+            		<img src="img/Leonel.jpg" class="avator">
+          		</div>
+          		<div class="list-item-right">
+            		<div class="list-item-content">
+              			<div class="name">Leonel Daniel Perez Rosales</div>
+           			</div>
+          		</div>
+        	</ons-list-item>
+                      
+      	</ons-list>
+    </ons-page>  
+</ons-navigator>
+
+<ons-template id="page2a.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left" style="line-height: 44px">
+          <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Intellibanks</div>
+      </ons-toolbar>
+
+      <div class="card1">
+      </div>
+        
+      <div class="contenedor">
+         <div class="titulo-new">Tópicos</div>
+         	<ons-list>
+            	<ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			JavaScript
+        		</ons-list-item>
+                <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			Emulacion de iOS
+        		</ons-list-item>
+                <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			Fitrados con Javascript
+        		</ons-list-item>
+                <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			Funciones en PHP
+        		</ons-list-item>        
+        	</ons-list>
+        </div>        
+    </ons-page>
+  </ons-template>
+
+<ons-template id="page3a.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left" style="line-height: 44px">
+          <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Intellibanks</div>
+      </ons-toolbar>
+
+      <div class="card2">
+      </div>
+        
+      <div class="contenedor">
+         <div class="titulo-new">Tópicos</div>
+         	<ons-list>
+            	<ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			JavaScript
+        		</ons-list-item>
+                <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			Emulacion de iOS
+        		</ons-list-item>
+                <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			Fitrados con Javascript
+        		</ons-list-item>
+                <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			Funciones en PHP
+        		</ons-list-item>        
+        	</ons-list>
+        </div>        
+    </ons-page>
+  </ons-template>
+  
+  <ons-template id="page4a.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left" style="line-height: 44px">
+          <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Intellibanks</div>
+      </ons-toolbar>
+
+      <div class="card3">
+      </div>
+        
+      <div class="contenedor">
+         <div class="titulo-new">Tópicos</div>
+         	<ons-list>
+            	<ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			JavaScript
+        		</ons-list-item>
+                <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			Emulacion de iOS
+        		</ons-list-item>
+                <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			Fitrados con Javascript
+        		</ons-list-item>
+                <ons-list-item modifier="chevron"  onclick="myNavigator.pushPage('', { animation : 'slide' } )" >        							        			Funciones en PHP
+        		</ons-list-item>        
+        	</ons-list>
+        </div>        
+    </ons-page>
+  </ons-template>
 		</ons-template>
 
 	</body>

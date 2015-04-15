@@ -247,14 +247,6 @@ ons-toolbar {
 .navigation-bar {
 	background: rgba(46, 138, 185, 0.8);
 }
-.page--shop-details__content {
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	top: 0px !important;
-	bottom: 0px;
-}
-
 .card1 {
 	background-color: white;
 	background-image: url(../img/news3.jpg);
@@ -283,7 +275,6 @@ ons-toolbar {
 
 .list-item-container {
   line-height: 1;
-  font-size: 14px;
   padding: 15px 0px 15px 15px;
 }
 
@@ -310,17 +301,18 @@ ons-toolbar {
   -webkit-border-radius: 3px;
 }
 
-.name {
-  font-weight: 500;
-  line-height: 16px;
-  font-size: 1.5em;
-  margin-bottom: 6px;
-}
-
-.desc {
-  line-height: 16px;
-}
-
 .lucent {
   opacity: 0.4;
+}
+.contenedor{
+	margin: 4px 0 0 0;
+	padding: 30px 30px 30px 30px;
+	text-align: justify;
+}
+.titulo-new{
+	font-weight: bolder;
+	margin-bottom: 20px;
+}
+.contenido{
+	color:#666666;
 }
